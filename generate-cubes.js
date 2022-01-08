@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const puppeteer = require('puppeteer')
 
-const totalCubes = 2
+const totalCubes = 999
 const hues = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink']
 const cubes = []
 const cubeNums = [
@@ -90,7 +90,7 @@ const captureScreens = async (cubes) => {
 
     // set viewport width and height
     await page.setViewport({
-      width: 1440,
+      width: 1080,
       height: 1080,
     })
 
@@ -103,7 +103,8 @@ const captureScreens = async (cubes) => {
       )
       await page.waitForTimeout(3000)
       await page.screenshot({ path: `./dist/cubes/${id}/image.png` })
-      // console.log(`Screenshot: ${id}`)
+      console.log(`Screenshot captured: ${id}`)
+      await page.waitForTimeout(500)
     }
   } catch (err) {
     console.log(`Screenshot Error: ${err.message}`)
@@ -214,4 +215,7 @@ fs.writeFile(
 
 console.log(`\r\n**Capturing Screenshots**`)
 console.log('-------------------------\r\n')
+
+// const newJson = require('./dist/meta.json')
+// captureScreens(newJson.cubes.slice(330))
 captureScreens(json.cubes)
