@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf dist",
     "generate-cubes": "rm -rf dist && node generate-cubes.js",
-    "generate-meta": "node generate-meta.js"
+    "generate-meta": "node generate-meta.js",
+    "organise-cubes": "node organise-cubes.js"
   },
   "keywords": [],
   "author": "",
