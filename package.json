@@ -6,13 +6,13 @@
   "scripts": {
     "clean": "rm -rf dist",
     "generate-cubes": "rm -rf dist && node generate-cubes.js",
-    "generate-meta": "node generate-meta.js"
+    "generate-meta": "rm -rf dist/meta && node generate-meta.js",
+    "organise-cubes": "node organise-cubes.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^13.0.0",
-    "unique-names-generator": "^4.6.0"
+    "puppeteer": "^13.0.0"
   }
 }
